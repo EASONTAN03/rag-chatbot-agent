@@ -1,0 +1,9 @@
+.env
+/data/*.db
+/notebooks/
+/docs/
+/venv/
+/env/
+/backup/
+/zus-api/api/
+*.pyc
