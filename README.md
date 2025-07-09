@@ -2,6 +2,8 @@
 
 A comprehensive AI-powered chatbot system for ZUS Coffee, featuring semantic product search, outlet location queries, and conversational AI capabilities. The project consists of two main components: a FastAPI backend service and a Streamlit frontend interface.
 
+**Deployment repository:** [zus-api-deployment on Render](https://github.com/EASONTAN03/zus-api-deployment)
+
 ---
 
 ## 🧩 Conceptual Framework
