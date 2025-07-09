@@ -1,9 +1,12 @@
-.env
-/data/*.db
-/notebooks/
+# Ignore everything inside these folders
 /docs/
-/venv/
 /env/
+/venv/
 /backup/
-/zus-api/api/
+
+# Cloud deployment (separate repo)
+zus-api-deployment/.git/
+
+# Ignore environment and compiled files
+.env
 *.pyc

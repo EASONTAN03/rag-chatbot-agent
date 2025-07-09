@@ -10,7 +10,8 @@ dotenv.load_dotenv()
 
 # API configuration
 # For local development, use the following:
-API_BASE_URL = API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000/api/v1")
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000/api/v1")
+print(API_BASE_URL)
 # For production/deployment (e.g., on Render), change to your deployed API URL:
 # API_BASE_URL = "https://your-deployed-api-url.onrender.com/api/v1"
 
@@ -205,31 +206,6 @@ def get_auth_headers():
     if token:
         return {"Authorization": f"Bearer {token}"}
     return {}
-
-# API helper functions
-def call_products_api(query: str) -> Dict[str, Any]:
-    """Call the products API endpoint from the /zus-api backend"""
-    headers = get_auth_headers()
-    try:
-        response = requests.get(f"{API_BASE_URL}/products", params={"query": query}, headers=headers, timeout=30)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return {"error": f"API Error: {response.status_code}"}
-    except Exception as e:
-        return {"error": f"Connection Error: {str(e)}"}
-
-def call_outlets_api(query: str) -> Dict[str, Any]:
-    """Call the outlets API endpoint from the /zus-api backend"""
-    headers = get_auth_headers()
-    try:
-        response = requests.get(f"{API_BASE_URL}/outlets", params={"query": query}, headers=headers, timeout=30)
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return {"error": f"API Error: {response.status_code}"}
-    except Exception as e:
-        return {"error": f"Connection Error: {str(e)}"}
 
 def call_chat_api(prompt: str) -> Dict[str, Any]:
     """Call the chat API endpoint from the /zus-api backend"""
