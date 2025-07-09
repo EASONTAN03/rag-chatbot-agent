@@ -1,4 +1,12 @@
-.env
-/venv/
+# Ignore everything inside these folders
+/docs/
 /env/
+/venv/
+/backup/
+
+# Cloud deployment (separate repo)
+zus-api-deployment/.git/
+
+# Ignore environment and compiled files
+.env
 *.pyc
